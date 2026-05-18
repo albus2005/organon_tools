@@ -74,3 +74,5 @@ ax.set_xticklabels(
 plt.tight_layout()
 plt.savefig('graphique/graphique3_evolution.png', dpi=150)
 print("Graphique 3 sauvegardé.")
+
+print("Fin")
