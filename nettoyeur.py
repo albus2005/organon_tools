@@ -17,15 +17,21 @@ est_rdc = ['Nord-kivu', 'Sud-kivu', 'Ituri',
 df = df[df['admin1_label'].isin(est_rdc)]
 
 # Question 1 — Déplacés par province
+print("Regroupement par provinces")
 par_province = df.groupby('admin1_label')['person'].sum()
 par_province = par_province.sort_values(ascending=False)
 print(par_province)
 
 # Question 2 — Causes des déplacements
+print("Regroupement par causes ")
 par_cause = df.groupby('cause_label')['person'].sum()
 par_cause = par_cause.sort_values(ascending=False)
 print(par_cause)
 
+print("Evolution mensuelle des déplacements dans l'Est de la RDC ")
+print("Nombre de mois :", len(par_mois))
+print("Premier mois :", par_mois.index[0])
+print("Dernier mois :", par_mois.index[-1])
 # Question 3 — Evolution dans le temps
 df['mois'] = df['movement_date'].dt.to_period('M')
 par_mois = df.groupby('mois')['person'].sum()
