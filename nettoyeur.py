@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_excel('rdc_mouvement_de_population_deplace_stock_mars_2026.xlsx', 
+df = pd.read_excel('donnees/rdc_mouvement_de_population_deplace_stock_mars_2026.xlsx', 
                     sheet_name='Data')
 
 # Garder nos colonnes
