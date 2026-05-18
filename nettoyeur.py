@@ -25,3 +25,8 @@ print(par_province)
 par_cause = df.groupby('cause_label')['person'].sum()
 par_cause = par_cause.sort_values(ascending=False)
 print(par_cause)
+
+# Question 3 — Evolution dans le temps
+df['mois'] = df['movement_date'].dt.to_period('M')
+par_mois = df.groupby('mois')['person'].sum()
+print(par_mois)
