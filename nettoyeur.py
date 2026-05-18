@@ -20,3 +20,8 @@ df = df[df['admin1_label'].isin(est_rdc)]
 par_province = df.groupby('admin1_label')['person'].sum()
 par_province = par_province.sort_values(ascending=False)
 print(par_province)
+
+# Question 2 — Causes des déplacements
+par_cause = df.groupby('cause_label')['person'].sum()
+par_cause = par_cause.sort_values(ascending=False)
+print(par_cause)
