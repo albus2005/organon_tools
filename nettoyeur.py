@@ -29,10 +29,11 @@ par_cause = par_cause.sort_values(ascending=False)
 print(par_cause)
 
 print("Evolution mensuelle des déplacements dans l'Est de la RDC ")
-print("Nombre de mois :", len(par_mois))
-print("Premier mois :", par_mois.index[0])
-print("Dernier mois :", par_mois.index[-1])
 # Question 3 — Evolution dans le temps
 df['mois'] = df['movement_date'].dt.to_period('M')
 par_mois = df.groupby('mois')['person'].sum()
+print("Nombre de mois :", len(par_mois))
+print("Premier mois :", par_mois.index[0])
+print("Dernier mois :", par_mois.index[-1])
+
 print(par_mois)
